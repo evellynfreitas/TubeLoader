@@ -1,8 +1,6 @@
-from pytube import YouTube
+from pytube import YouTube, Playlist
 
-video = YouTube('https://www.youtube.com/watch?v=oKVYm8mIUdo')
-print(video.title)
-print(video.views)
-print(video.thumbnail_url)
 
-video.streams.get_highest_resolution().download()
+def baixarVideo(url):
+    video = YouTube(url)
+    video.streams.get_highest_resolution().download()
