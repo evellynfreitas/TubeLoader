@@ -1,11 +1,12 @@
 from TubeLoader import *
 
-escolha = input("Digite 1 para Video ou 2 para Playlist -> ")
+url = input("Digite uma url: ")
 
-if escolha == "1":
-    url = input("Digite uma url: ")
-    baixarVideo(url)
+try:
+    if "list" in url:
+        baixarPlaylist(url)
+    else:
+        baixarVideo(url)
 
-elif escolha == "2":
-    url = input("Digite uma url: ")
-    baixarPlaylist(url)
+except Exception as ex:
+    print(type(ex))
